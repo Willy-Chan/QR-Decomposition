@@ -1,6 +1,4 @@
-# TODO: Make a "matrix" class
-
-import numpy as np
+# TODO: Make a "matrix" class WITHOUT numpy
 
 class matrix:
 
@@ -8,7 +6,7 @@ class matrix:
 
         self.shape = shape
 
-        self.matrix = np.array()
+        self.matrix = []
 
         for elem in elems:
             pass

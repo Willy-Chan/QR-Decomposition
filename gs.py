@@ -69,7 +69,7 @@ def gram_schmidt(matrix):
 
         normalized_matrix[i] = new_vector / norm(new_vector)  # Replace the ith row in norm_matrix with the new (orthonormal) vector
 
-    return normalized_matrix.transpose()
+    return normalized_matrix.transpose() # Normalized matrix must be transposed, since all vectors are horizontal in numpy
 
 
 square_matrix = np.array([[1, 1, 7],
