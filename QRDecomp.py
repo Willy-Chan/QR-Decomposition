@@ -12,10 +12,11 @@ import numpy as np
 import gs
 
 
-square_matrix = np.array([[1, 1, 7],
-                          [3, 3, -1],
-                          [5, 1, 7]])
+square_matrix = np.array([[1, 3, 5],
+                          [1, 3, 1],
+                          [2, -1, 7]])
 
+square_matrix = square_matrix.transpose()       # Transpose so rows become cols, easier to work with in numpy
 
 square_matrix_dim = len(square_matrix[0])
 
