@@ -42,7 +42,7 @@ def get_proj(v1, v2):
 
 
 
-def gram_schmidt(matrix):
+def gram_schmidt(matrix):       #INPUT MATRIX IS ALREADY TRANSPOSED, SO THE "COLUMNS" ARE REALLY ROWS WITHIN THE NUMPY ARRAY
 
     # Create a new normalized matrix that's first 'empty' (contains only zeroes),
     # then appending the normalized vectors (REPLACING the zeroes).
