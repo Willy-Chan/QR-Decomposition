@@ -32,9 +32,8 @@ def get_proj(v1, v2):
     :param v2: vector to be projected onto v1
     :return: projection vector of v2 ONTO v1
     """
-
-    proj_len = np.dot(v2, v1 / norm(v1))
     proj_dir = v1 / norm(v1)
+    proj_len = np.dot(v2, proj_dir)
 
     proj = proj_len * proj_dir
 
@@ -59,8 +58,11 @@ def gram_schmidt(matrix):       #INPUT MATRIX IS ALREADY TRANSPOSED, SO THE "COL
 
     # num_rows, num_cols = matrix.shape               # Get shape of matrix (for future reference)
 
-    for i in range(len(matrix)):
-        gs_terms = np.zeros(shape=len(matrix[0]))  # G-S terms to be subtracted: RESETS EVERY TIME!!!
+    matrix_row_length = len(matrix[0])
+    matrix_col_length = len(matrix)
+
+    for i in range(matrix_col_length):
+        gs_terms = np.zeros(shape=matrix_row_length)  # G-S terms to be subtracted: RESETS EVERY TIME!!!
 
         for j in range(i):
                 gs_terms += get_proj(normalized_matrix[j], matrix[i])       # Remember: GS terms are just the PROJECTION of one row onto all of the previous
@@ -69,10 +71,9 @@ def gram_schmidt(matrix):       #INPUT MATRIX IS ALREADY TRANSPOSED, SO THE "COL
 
         normalized_matrix[i] = new_vector / norm(new_vector)  # Replace the ith row in norm_matrix with the new (orthonormal) vector
 
-    return normalized_matrix.transpose() # Normalized matrix must be transposed, since all vectors are horizontal in numpy
+    return normalized_matrix
 
 
 square_matrix = np.array([[1, 1, 7],
                           [3, 3, -1],
                           [5, 1, 7]]).transpose()
-print(gram_schmidt(square_matrix))
