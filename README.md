@@ -25,10 +25,6 @@ pip install numpy
 * Provide the matrix A that you want to decompose. You can specify the matrix by modifying the input array in the code.
 * Run the script. The program will perform the QR-Decomposition and output the resulting orthogonal matrix $Q$ and upper triangular matrix $R$.
 
-You can verify the decomposition by multiplying $Q^T$ with $R$ and comparing it to the original matrix $A$. Mathematically, this can be represented as:
-$A = Q * R$
-$A = Q^T * (Q * R)$
-
 Please note that the QR-Decomposition project utilizes NumPy's built-in functions to perform the decomposition. It is designed for real square matrices.
 
 ## Support
